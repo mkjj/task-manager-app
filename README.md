@@ -1,3 +1,7 @@
+# Sammary
+
+The Application was a entry pratice for Node.js, React.js and MongoDB. 
+
 # Task Manager Application
 
 A full-stack task management application built with React.js frontend, Node.js/Express backend, and MongoDB database. Containerized with Docker for easy deployment.
