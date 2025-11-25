@@ -465,3 +465,80 @@ body {
     align-items: center;
   }
 }
+
+/* Edit Task Styles */
+.task-item.editing {
+  border-left: 4px solid #3498db;
+  background-color: #f8f9fa;
+}
+
+.task-edit-form {
+  padding: 1rem 0;
+}
+
+.task-edit-form .form-group {
+  margin-bottom: 1rem;
+}
+
+.task-edit-form .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.task-edit-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #2c3e50;
+}
+
+.task-edit-form input,
+.task-edit-form textarea,
+.task-edit-form select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.task-edit-form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.edit-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.btn-edit {
+  background-color: #f39c12;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-edit:hover {
+  background-color: #e67e22;
+}
+
+/* Responsive design for edit form */
+@media (max-width: 768px) {
+  .task-edit-form .form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .edit-actions {
+    flex-direction: column;
+  }
+  
+  .edit-actions button {
+    width: 100%;
+  }
+}
