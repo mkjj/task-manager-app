@@ -53,7 +53,7 @@ services:
     networks:
       - app-network
 
-  # Mongo Express (Web-based MongoDB admin interface - Optional)
+  # Mongo Express
   mongo-express:
     image: mongo-express
     container_name: taskmanager_mongo_express
