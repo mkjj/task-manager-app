@@ -177,6 +177,9 @@ Desktop.ini
 *.bak
 *.backup
 
+#nginx configuration
+*nginx.conf
+
 # Lock files (choose one - if using npm, keep package-lock.json)
 # package-lock.json  # Uncomment if you use yarn
 # yarn.lock          # Uncomment if you use npm
