@@ -1,21 +1,29 @@
 {
   "name": "task-manager-frontend",
   "version": "1.0.0",
-  "description": "Frontend for task manager app",
+  "description": "Frontend for task manager app with i18n support",
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.15.0",
-    "axios": "^1.5.0"
+    "axios": "^1.5.0",
+    "i18next": "^23.5.1",
+    "react-i18next": "^13.2.2",
+    "i18next-browser-languagedetector": "^7.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "extract-translations": "i18next-parser src --config i18next-parser.config.js"
   },
   "devDependencies": {
-    "react-scripts": "5.0.1"
+    "react-scripts": "5.0.1",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/user-event": "^13.5.0",
+    "i18next-parser": "^8.1.0"
   },
   "browserslist": {
     "production": [

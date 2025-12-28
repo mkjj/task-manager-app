@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useTransition } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 
 const HomePage = () => {
   const { user } = useAuth();
-
+  const {t, i18n} = useTransition();
   return (
     <div className="home-page">
       <div className="hero-section">

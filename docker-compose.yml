@@ -17,7 +17,6 @@ services:
   backend:
     build:
       context: ./backend
-      dockerfile: ./backend.Dockerfile
     container_name: taskmanager_backend
     restart: unless-stopped
     ports:
@@ -41,7 +40,6 @@ services:
   frontend:
     build:
       context: ./frontend
-      dockerfile: ./frontend.Dockerfile
     container_name: taskmanager_frontend
     restart: unless-stopped
     ports:

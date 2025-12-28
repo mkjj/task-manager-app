@@ -46,13 +46,14 @@ The Application was a entry pratice for Node.js, React.js and MongoDB.
 ```
 task-manager-app/
 ├── backend/
-│   ├── config/           # Database configuration
-│   ├── controllers/      # Route controllers
-│   ├── middleware/       # Authentication middleware
+│   ├── config/          # Database configuration
+│   ├── controllers/     # Route controllers
+│   ├── middleware/      # Authentication middleware
 │   ├── models/          # MongoDB models
 │   ├── routes/          # API routes
 │   ├── server.js        # Entry point
-│   └── package.json
+│   ├── package.json
+    └── Dockerfile       # Backend Dockerfile   
 ├── frontend/
 │   ├── public/          # Static files
 │   ├── src/
@@ -62,10 +63,11 @@ task-manager-app/
 │   │   ├── api/         # API configuration
 │   │   └── App.js       # Main App component
 │   ├── nginx.conf       # Nginx configuration
-│   └── package.json
-├── docker-compose.yml    # Docker compose configuration
-├── backend.Dockerfile    # Backend Dockerfile
-├── frontend.Dockerfile   # Frontend Dockerfile
+│   ├── package.json
+│   └── Dockerfile       # Frontend Dockerfile
+├── docker-compose.yml   # Docker compose configuration
+├── backend.
+├── frontend.
 └── README.md
 ```
 
