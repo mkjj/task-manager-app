@@ -1,11 +1,9 @@
-version: '3.8'
-
 services:
   # MongoDB Database
   mongodb:
     image: mongo:7.0
     container_name: taskmanager_db
-    restart: unless-stopped
+    restart: always
     ports:
       - "27017:27017"
     volumes:
@@ -18,7 +16,7 @@ services:
     build:
       context: ./backend
     container_name: taskmanager_backend
-    restart: unless-stopped
+    restart: always
     ports:
       - "5000:5000"
     environment:
@@ -41,7 +39,7 @@ services:
     build:
       context: ./frontend
     container_name: taskmanager_frontend
-    restart: unless-stopped
+    restart: always
     ports:
       - "3000:3000"
     environment:
@@ -55,7 +53,7 @@ services:
   mongo-express:
     image: mongo-express
     container_name: taskmanager_mongo_express
-    restart: unless-stopped
+    restart: always
     ports:
       - "8081:8081"
     environment:
