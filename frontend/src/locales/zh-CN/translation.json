@@ -97,7 +97,8 @@
     "clear": "清空",
     "select": "选择...",
     "all": "全部",
-    "none": "无"
+    "none": "无",
+    "welcome": "欢迎"
   },
   "language": {
     "english": "English",

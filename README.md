@@ -66,8 +66,6 @@ task-manager-app/
 │   ├── package.json
 │   └── Dockerfile       # Frontend Dockerfile
 ├── docker-compose.yml   # Docker compose configuration
-├── backend.
-├── frontend.
 └── README.md
 ```
 

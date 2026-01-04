@@ -97,7 +97,8 @@
     "clear": "Clear",
     "select": "Select...",
     "all": "All",
-    "none": "None"
+    "none": "None",
+    "welcome": "Welcome"
   },
   "language": {
     "english": "English",
