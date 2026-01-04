@@ -10,27 +10,13 @@ const LanguageSwitcher = () => {
     { code: 'zh-CN', name: 'Chinese', nativeName: '中文' }
   ];
 
-  const changeLanguage = (lng) => {
-    i18n.changeLanguage(lng);
-
-    // You can also send to backend if needed
-    fetch('/api/language', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      credentials: 'include',
-      body: JSON.stringify({ language: lng })
-    }).catch(err => console.error('Failed to update language on server:', err));
-  };
-
   return (
     <div className="language-switcher">
       <div className="language-buttons">
         {languages.map((lang) => (
           <button
             key={lang.code}
-            onClick={() => changeLanguage(lang.code)}
+            onClick={() => i18n.changeLanguage(lang.code)}
             className={`language-button ${i18n.language === lang.code ? 'active' : ''}`}
           >
             {lang.nativeName}

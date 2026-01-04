@@ -1,27 +1,27 @@
-import React, { useTransition } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 
 const HomePage = () => {
   const { user } = useAuth();
-  const {t, i18n} = useTransition();
+  const {t} = useTranslation();
   return (
     <div className="home-page">
       <div className="hero-section">
-        <h1>Welcome to Task Manager</h1>
-        <p>Organize your tasks efficiently and boost your productivity</p>
+        <h1>{t('home.welcomeMessage')}</h1>
+        <p>{t('home.getStarted')}</p>
         
         {user ? (
           <Link to="/dashboard" className="btn-primary">
-            Go to Dashboard
+            {t('home.button.dashbord')}
           </Link>
         ) : (
           <div className="auth-buttons">
             <Link to="/login" className="btn-primary">
-              Login
+              {t('home.button.login')}
             </Link>
             <Link to="/register" className="btn-secondary">
-              Register
+              {t('home.button.register')}
             </Link>
           </div>
         )}

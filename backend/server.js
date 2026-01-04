@@ -13,9 +13,10 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: ['http://localhost:3000', 'http://frontend:3000'],
+  origin: [process.env.CORS_ORIGIN],
   credentials: true
 }));
+
 app.use(express.json());
 
 // Routes
@@ -51,6 +52,7 @@ app.use((err, req, res, next) => {
   res.status(500).json({ message: 'Something went wrong!' });
 });
 
+// Setup server
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {

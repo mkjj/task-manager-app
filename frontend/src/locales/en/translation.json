@@ -1,4 +1,14 @@
 {
+  "home": {
+    "welcomeMessage": "Welcome to Task Manager! Efficiently manage your tasks.",
+    "getStarted": "Organize your tasks efficiently and boost your productivity",
+    "button":
+    {
+      "login": "Login",
+      "register": "Register",
+      "dashbord": "Go to Dashboard"
+    }
+  },
   "app": {
     "title": "Task Manager",
     "description": "Manage your tasks efficiently",

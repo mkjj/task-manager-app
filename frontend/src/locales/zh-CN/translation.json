@@ -1,4 +1,14 @@
 {
+  "home": {
+    "welcomeMessage": "欢迎使用任务管理器！高效管理您的任务。",
+    "getStarted": "高效组织您的任务，提升您的生产力",
+    "button":
+    {
+      "login": "登录",
+      "register": "注册",
+      "dashbord": "前往仪表板"
+    }
+  },
   "app": {
     "title": "任务管理器",
     "description": "高效管理您的任务",
