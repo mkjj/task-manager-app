@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useAuth } from '../../context/AuthContext';
+import { useAuth } from 'context/AuthContext';
 import { useTranslation } from 'react-i18next';
-import LanguageSwitcher from '../LanguageSwitcher';
+import LanguageSwitcher from 'components/common/LanguageSwitcher';
 
 const Navbar = () => {
   const { user, logout } = useAuth();
@@ -25,12 +25,12 @@ const Navbar = () => {
           {user ? (
             <>
               <Link to="/dashboard">{t('navigation.dashboard')}</Link>
-              <Link to="/tasks" className="nav-link">
+              {/* <Link to="/tasks" className="nav-link">
                 {t('navigation.tasks')}
-              </Link>
-              <Link to="/profile" className="nav-link">
+              </Link> */}
+              {/* <Link to="/profile" className="nav-link">
                 {t('navigation.profile')}
-              </Link>
+              </Link> */}
               <span className="nav-user">
                 {t('common.welcome')}, {user.name}
               </span>

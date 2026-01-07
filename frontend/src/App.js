@@ -1,12 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { AuthProvider } from './context/AuthContext';
-import Navbar from './components/Layout/Navbar';
-import HomePage from './pages/HomePage';
-import DashboardPage from './pages/DashboardPage';
-import Login from './components/Auth/Login';
-import Register from './components/Auth/Register';
-import NotFoundPage from './pages/NotFoundPage';
+import { AuthProvider } from 'context/AuthContext';
+import Navbar from 'components/Layout/Navbar';
+import HomePage from 'pages/HomePage';
+import DashboardPage from 'pages/DashboardPage';
+import Login from 'components/common/Auth/Login';
+import Register from 'components/common/Auth/Register';
+import NotFoundPage from 'pages/NotFoundPage';
 import './App.css';
 
 function App() {

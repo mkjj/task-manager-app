@@ -1,18 +1,16 @@
 import React, { useState } from 'react';
-import { useAuth } from '../../context/AuthContext';
+import { useAuth } from 'context/AuthContext';
 import { useNavigate, Link } from 'react-router-dom';
 
-const Register = () => {
+const Login = () => {
   const [formData, setFormData] = useState({
-    name: '',
     email: '',
-    password: '',
-    confirmPassword: ''
+    password: ''
   });
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
-  const { register } = useAuth();
+  const { login } = useAuth();
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -25,17 +23,9 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
-
-    if (formData.password !== formData.confirmPassword) {
-      return setError('Passwords do not match');
-    }
-
-    if (formData.password.length < 6) {
-      return setError('Password must be at least 6 characters');
-    }
-
     setLoading(true);
-    const result = await register(formData.name, formData.email, formData.password);
+
+    const result = await login(formData.email, formData.password);
     setLoading(false);
 
     if (result.success) {
@@ -48,19 +38,9 @@ const Register = () => {
   return (
     <div className="auth-container">
       <div className="auth-form">
-        <h2>Register</h2>
+        <h2>Login</h2>
         {error && <div className="error-message">{error}</div>}
         <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label>Name</label>
-            <input
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-            />
-          </div>
           <div className="form-group">
             <label>Email</label>
             <input
@@ -81,26 +61,16 @@ const Register = () => {
               required
             />
           </div>
-          <div className="form-group">
-            <label>Confirm Password</label>
-            <input
-              type="password"
-              name="confirmPassword"
-              value={formData.confirmPassword}
-              onChange={handleChange}
-              required
-            />
-          </div>
           <button type="submit" disabled={loading}>
-            {loading ? 'Registering...' : 'Register'}
+            {loading ? 'Logging in...' : 'Login'}
           </button>
         </form>
         <p>
-          Already have an account? <Link to="/login">Login here</Link>
+          Don't have an account? <Link to="/register">Register here</Link>
         </p>
       </div>
     </div>
   );
 };
 
-export default Register;
+export default Login;

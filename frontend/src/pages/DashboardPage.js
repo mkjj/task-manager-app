@@ -1,8 +1,9 @@
+// pages/DashboardPage.js
 import React, { useState, useEffect } from 'react';
-import { useAuth } from '../context/AuthContext';
-import api from '../api/axios';
-import TaskList from '../components/Tasks/TaskList';
-import TaskForm from '../components/Tasks/TaskForm';
+import { useAuth } from 'context/AuthContext';
+import { taskApi } from 'services/api/endpoints/task';
+import TaskList from 'components/common/Tasks/TaskList';
+import TaskForm from 'components/common/Tasks/TaskForm';
 
 const DashboardPage = () => {
   const [tasks, setTasks] = useState([]);
@@ -16,7 +17,7 @@ const DashboardPage = () => {
 
   const fetchTasks = async () => {
     try {
-      const response = await api.get('/tasks');
+      const response = await taskApi.fetch();
       setTasks(response.data);
     } catch (error) {
       console.error('Error fetching tasks:', error);
@@ -27,7 +28,7 @@ const DashboardPage = () => {
 
   const handleCreateTask = async (taskData) => {
     try {
-      const response = await api.post('/tasks', taskData);
+      const response = await taskApi.Create(taskData);
       setTasks([response.data, ...tasks]);
       setShowForm(false);
     } catch (error) {
@@ -38,7 +39,7 @@ const DashboardPage = () => {
 
   const handleUpdateTask = async (taskId, updateData) => {
     try {
-      const response = await api.put(`/tasks/${taskId}`, updateData);
+      const response = await taskApi.Update(taskId, updateData);
       setTasks(tasks.map(task => 
         task._id === taskId ? response.data : task
       ));
@@ -50,7 +51,7 @@ const DashboardPage = () => {
 
   const handleDeleteTask = async (taskId) => {
     try {
-      await api.delete(`/tasks/${taskId}`);
+      await taskApi.delete(taskId);
       setTasks(tasks.filter(task => task._id !== taskId));
     } catch (error) {
       console.error('Error deleting task:', error);
