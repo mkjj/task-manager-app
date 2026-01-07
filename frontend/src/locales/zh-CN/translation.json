@@ -2,12 +2,39 @@
   "home": {
     "welcomeMessage": "欢迎使用任务管理器！高效管理您的任务。",
     "getStarted": "高效组织您的任务，提升您的生产力",
-    "button":
-    {
+    "content": {
+      "feature": {
+        "title": "功能",
+        "createTask": {
+          "title": "创建任务",
+          "description": "添加带有标题、描述、截止日期和优先级的任务"
+        },
+        "trackProgress": {
+          "title": "跟踪进度",
+          "description": "更新任务状态，从待处理到进行中再到已完成"
+        },
+        "organize": {
+          "title": "组织",
+          "description": "按优先级和截止日期分类任务"
+        }
+      }
+    },
+    "button": {
       "login": "登录",
       "register": "注册",
       "dashbord": "前往仪表板"
     }
+  },
+  "dashboard": {
+    "title": "仪表板",
+    "welcomeBack": "欢迎回来，{{name}}！",
+    "stats": {
+      "totalTasks": "任务总数",
+      "completed": "已完成",
+      "inProgress": "进行中",
+      "pending": "待处理"
+    },
+    "createTask": "创建新任务"
   },
   "app": {
     "title": "任务管理器",

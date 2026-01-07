@@ -28,19 +28,19 @@ const HomePage = () => {
       </div>
 
       <div className="features-section">
-        <h2>Features</h2>
+        <h2>{t('home.content.feature.title')}</h2>
         <div className="features-grid">
           <div className="feature-card">
-            <h3>Create Tasks</h3>
-            <p>Add tasks with titles, descriptions, due dates, and priorities</p>
+            <h3>{t('home.content.feature.createTask.title')}</h3>
+            <p>{t('home.content.feature.createTask.description')}</p>
           </div>
           <div className="feature-card">
-            <h3>Track Progress</h3>
-            <p>Update task status from pending to in-progress to completed</p>
+            <h3>{t('home.content.feature.trackProgress.title')}</h3>
+            <p>{t('home.content.feature.trackProgress.description')}</p>
           </div>
           <div className="feature-card">
-            <h3>Organize</h3>
-            <p>Categorize tasks by priority and due dates</p>
+            <h3>{t('home.content.feature.organize.title')}</h3>
+            <p>{t('home.content.feature.organize.description')}</p>
           </div>
         </div>
       </div>

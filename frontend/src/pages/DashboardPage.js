@@ -1,5 +1,6 @@
 // pages/DashboardPage.js
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useAuth } from 'context/AuthContext';
 import { taskApi } from 'services/api/endpoints/task';
 import TaskList from 'components/common/Tasks/TaskList';
@@ -10,6 +11,7 @@ const DashboardPage = () => {
   const [loading, setLoading] = useState(true);
   const [showForm, setShowForm] = useState(false);
   const { user } = useAuth();
+  const {t} = useTranslation();
 
   useEffect(() => {
     fetchTasks();
@@ -69,37 +71,37 @@ const DashboardPage = () => {
   return (
     <div className="dashboard-page">
       <div className="dashboard-header">
-        <h1>Welcome back, {user?.name}!</h1>
+        <h1>{t('dashboard.welcomeBack', { name: user?.name })}</h1>
         <button 
           onClick={() => setShowForm(!showForm)}
           className="btn-primary"
         >
-          {showForm ? 'Cancel' : 'Add New Task'}
+          {showForm ? t('common.cancel') : t('dashboard.createTask')}
         </button>
       </div>
 
       <div className="stats-grid">
         <div className="stat-card">
-          <h3>Total Tasks</h3>
+          <h3>{t('dashboard.stats.totalTasks')}</h3>
           <p className="stat-number">{stats.total}</p>
         </div>
         <div className="stat-card">
-          <h3>Completed</h3>
+          <h3>{t('dashboard.stats.completed')}</h3>
           <p className="stat-number">{stats.completed}</p>
         </div>
         <div className="stat-card">
-          <h3>In Progress</h3>
+          <h3>{t('dashboard.stats.inProgress')}</h3>
           <p className="stat-number">{stats.inProgress}</p>
         </div>
         <div className="stat-card">
-          <h3>Pending</h3>
+          <h3>{t('dashboard.stats.pending')}</h3>
           <p className="stat-number">{stats.pending}</p>
         </div>
       </div>
 
       {showForm && (
         <div className="task-form-modal">
-          <h2>Create New Task</h2>
+          <h2>{t('tasks.createTask')}</h2>
           <TaskForm onSubmit={handleCreateTask} />
         </div>
       )}

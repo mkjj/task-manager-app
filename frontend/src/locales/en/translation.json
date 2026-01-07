@@ -2,12 +2,39 @@
   "home": {
     "welcomeMessage": "Welcome to Task Manager! Efficiently manage your tasks.",
     "getStarted": "Organize your tasks efficiently and boost your productivity",
-    "button":
-    {
+    "content": {
+      "feature": {
+        "title": "Features",
+        "createTask": {
+          "title": "Create Tasks",
+          "description": "Add tasks with titles, descriptions, due dates, and priorities"
+        },
+        "trackProgress": {
+          "title": "Track Progress",
+          "description": "Update task status from pending to in-progress to completed"
+        },
+        "organize": {
+          "title": "Organize",
+          "description": "Categorize tasks by priority and due dates"
+        }
+      }
+    },
+    "button": {
       "login": "Login",
       "register": "Register",
       "dashbord": "Go to Dashboard"
     }
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcomeBack": "Welcome back, {{name}}!",
+    "stats": {
+      "totalTasks": "Total Tasks",
+      "completed": "Completed",
+      "inProgress": "In Progress",
+      "pending": "Pending"
+    },
+    "createTask": "Create New Task"
   },
   "app": {
     "title": "Task Manager",
