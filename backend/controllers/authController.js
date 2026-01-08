@@ -1,6 +1,7 @@
 const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 const { validationResult } = require('express-validator');
+const userRepository = require('../repositories/user');
 
 // Generate JWT
 const generateToken = (id) => {
@@ -17,21 +18,22 @@ const registerUser = async (req, res) => {
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const { name, email, password } = req.body;
+    const userData = {
+      name: req.body.name,
+      email: req.body.email,
+      password: req.body.password
+    }
 
     // Check if user exists
-    const userExists = await User.findOne({ email });
+    const userExists = await userRepository.findByEmail({ email });
     if (userExists) {
-      return res.status(400).json({ message: 'User already exists' });
+      return res.status(400).json({ message: 'Email already registered' });
     }
 
     // Create user
-    const user = await User.create({
-      name,
-      email,
-      password,
-    });
+    const user = await userRepository.create(userData);
 
+    // Return user data with token
     if (user) {
       res.status(201).json({
         _id: user._id,
